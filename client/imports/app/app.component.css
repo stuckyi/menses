@@ -1,0 +1,45 @@
+/* font */
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+body {
+  /*background-color: #e2e1e0;*/
+  font-family: 'Noto Sans Korean', sans-serif;
+  font-weight: 100; 
+  }
+
+/* for nav */
+a {
+  text-decoration: none;
+  color: #9e9e9e; }
+
+ul {
+  list-style-type: none; }
+
+#nav-home {
+  
+  color: white;
+  font-family: 'Bungee',cursive;
+  font-size: 22px;
+   }
+
+nav {
+  top:0;
+  left:0;
+
+  position: fixed;
+
+  width: 100%;
+  height: 40px;
+  background-color: #673AB7;
+  padding: 10px;
+   }
+
+nav a {
+  display: inline-block;
+  padding-left: 10px; 
+}
+
+nav a.active {
+  color: white; }
+
+/*# sourceMappingURL=app.component.css.map */
