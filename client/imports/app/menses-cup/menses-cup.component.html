@@ -29,7 +29,14 @@
 
 
 
-        <div class="more-view">생리컵 접는 방법 자세히 보기</div>
+        <div class="more-view"   id="usage1" (click)="toggleState($event)" >
+                <span [ngSwitch]="detailstate.usage1"  [@moreviewState]="state">
+                        <span *ngSwitchCase='false'> 생리컵 접는 방법 자세히 보기 </span>
+                        <span *ngSwitchCase='true'> 생리컵 접는 방법 닫기 </span>
+                        <span *ngSwitchDefault> 생리컵 접는 방법 자세히 보기</span>
+                </span> 
+                <p [hidden]="detailstate.usage1 === false">생리컵 접는 자세한 방법 테스트 문구생리컵 접는 자세한 방법 테스트 문구생리컵 접는 자세한 방법 테스트 문구생리컵 접는 자세한 방법 테스트 문구생리컵 접는 자세한 방법 테스트 문구</p>
+        </div>
 
 
 
