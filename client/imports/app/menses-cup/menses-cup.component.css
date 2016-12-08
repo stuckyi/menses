@@ -98,4 +98,18 @@ li.selected {
 
 
 h2{ margin-top: 80px; }
-.more-view{ border: 2px solid #673AB7; width:100%; height:auto; margin-bottom:160px;   margin-top: 20px;  padding:8px; }
+.more-view{ border: 2px solid #673AB7; width:100%; height:auto; 
+margin-bottom:160px;   margin-top: 20px;  padding:8px; }
+
+
+
+.usage-item {
+  margin:10px;
+  padding: 30px; 
+  border : 2px solid #673AB7;
+}
+
+img {
+  max-width:600px;
+  border : 2px solid #673AB7;
+}
