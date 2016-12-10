@@ -1,9 +1,7 @@
 
 
 $fontName : 'Noto Sans Korean', sans-serif;
-
 $deepPupple: #673AB7;
-
 $color-default : #9e9e9e;
 $color-list-selected: white;
 
@@ -46,26 +44,10 @@ li.selected { background-color: $color-list-selected; }
     
     overflow-x: hidden;
     overflow-y: auto;
-    border: 2px solid $deepPupple, 20%;
+    border: 2px solid $deepPupple;
   }
 }
 
-
-
-.nav-sidebar {
-
-  margin-right: -21px;
-  margin-bottom: 20px;
-  margin-left: -40px; 
-
-  border: 2px solid $deepPupple;
-}
-
-.nav-sidebar > li { margin-top: 8px; }
-.nav-sidebar > li > a { padding :auto 20px auto 10px;  }
-.nav-sidebar > .selected > a, 
-.nav-sidebar > .selected > a:hover,
-.nav-sidebar > .selected > a:focus { font-weight: 500;  color: $deepPupple; }
 
 
 
@@ -88,26 +70,31 @@ li.selected { background-color: $color-list-selected; }
    font-weight: 500;  color: white; }
 
 
-
-
-
-
-
-
-.main {
+#warp > .main {
   width: 100%; 
-  border: 2px solid $deepPupple; 
+  
 }
 
 @media (min-width: 768px) {
-  .main { width: 80%;  }
-  }
+  #wrap > .main {
+      width: 80%;
+      margin-left: 4px;
+      padding: 20px;
+      border: 2px solid $deepPupple;
+      color:#424242    ;
+      font-size:20px;
+      letter-spacing: -0.6px;
+    }
+
+    
+}
+
+.item { max-width:700px; }
 
 
 
 
-
-/*for card UI */
+/*for card UI 
 .intro {
   background-color: white;
   padding: 80px;
@@ -127,14 +114,23 @@ li.selected { background-color: $color-list-selected; }
 
 .item:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-
+*/
 /*# sourceMappingURL=mc.component.css.map */
 
 
 
 h2{ margin-top: 80px; }
-.more-view{ border: 2px solid $deepPupple; width:100%; height:auto; 
-margin-bottom:160px;   margin-top: 20px;  padding:8px; }
+
+.more-view{
+  border: 2px solid $deepPupple;
+  margin-top: 20px;
+  margin-bottom:160px;
+  
+  padding: 8px;
+  width: 80%;
+   height:auto; 
+  
+  }
 
 
 

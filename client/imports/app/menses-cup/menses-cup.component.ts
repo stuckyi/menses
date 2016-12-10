@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Index } from '../index.model';
 import { INDEXLIST } from '../mock-indexlist';
-import {NgSwitch, NgSwitchWhen, NgSwitchDefault} from '@angular/common';
 
 import {
-  OnInit,
   Input,
   trigger,
   state,
@@ -35,8 +33,7 @@ import styles from './menses-cup.component.css';
               transition('inactive => active', animate('100ms ease-in')),
               transition('active => inactive', animate('100ms ease-out'))
             ])
-        ],
-        directives:[NgSwitch, NgSwitchWhen, NgSwitchDefault]
+        ]
 })
 
 export class MensesCupComponent {
@@ -51,6 +48,8 @@ export class MensesCupComponent {
                 'usage5'  :  false,
                 'usage6'  :  false
         };
+
+        detailMessage: string = '자세히보기';
         
 
         public state: string = 'inactive';
@@ -84,24 +83,28 @@ export class MensesCupComponent {
        
         
         onSelect(index:Index): void {
-                console.log(index);
                 this.selectedIndex = index;
         }
 
         toggleState(e: any):void{
-                this.state = (this.state === 'inactive' ? 'active' :'inactive');
-                // console.log(this.state);
+                
+                this.state = (this.state === 'inactive' ? 'active' : 'inactive');
+
+                this.detailMessage = (this.detailMessage === '자세히보기'
+                        ? '닫아두기'
+                        : '자세히보기'
+                );
+                
                 let targetid = e.target.id + '';
+                this.detailstate[targetid] = (this.detailstate[targetid] === false
+                        ? true
+                        : false
+                );
+        }
 
-                this.detailstate[targetid] = (this.detailstate[targetid] === false ? true : false);
-
-
-                
-                
-                /*
-                if(e.target.id === 'usage-1'){ console.log("생리컵 접는 방법 자세히 보기"); }
-
-                */
+        checkValue(values: any): void{
+                console.log("clicked!");
+                console.log(values);
         }
 
 }
