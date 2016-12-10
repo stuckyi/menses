@@ -1,5 +1,5 @@
 <div id="wrap">
-        <!-- sidebar area -->
+        <!-- sidebar area 
         <div class="sidebar">
                 <ul class="nav-sidebar">
                         <li *ngFor="let index of indexList" (click)="onSelect(index)" [class.selected]="index === selectedIndex">
@@ -9,6 +9,23 @@
                         </li>
                 </ul>
         </div>
+        -->
+        <!-- sidebar area -->
+         <div class="sidebar">
+                 <div class="sidebar-index-box">
+                         <div class="sidebar-index-item" 
+                         *ngFor="let index of indexList"
+                         (mouseover)="onSelect(index)"
+                         [class.selected]="index === selectedIndex">
+                                <a  href="#"
+                                 pageScroll href={{index.endScroll}}>
+                                        <span> {{ index.name }}</span>
+                                </a>
+                         </div>
+                 </div>
+
+        </div>
+
         <!-- main content area -->
         <div class="main">
                 <h1>사용법</h1>

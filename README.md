@@ -51,6 +51,14 @@ Your application is crashing. Waiting for file change.
 - 다시 `meteor run`을 통해 app을 실행시켜본다.
 - `npm rebuild node-sass` 보통 이런 경우에 이렇게 나온단다.
 - `npm install` 후 `meteor run`
+
+
+---
+---
+## 개발참고 문서
+- [MDN, CSS box-sizing] (https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing)
+---
+---
 # Angular2-Meteor Boilerplate
 
 [![bitHound Overall Score](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/score.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base) [![bitHound Dependencies](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/dependencies.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base/master/dependencies/npm)
