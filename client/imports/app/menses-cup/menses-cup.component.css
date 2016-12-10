@@ -1,9 +1,3 @@
-body {
-  /*background-color: #e2e1e0;*/
-  font-family: 'Noto Sans Korean', sans-serif;
-  font-weight: 100;
-  }
-
 a {
   text-decoration: none;
   color: #9e9e9e; }
@@ -14,39 +8,41 @@ ul {
 li.selected {
   background-color: white; }
 
-/* for sidebar */
-/* Hide for mobile, show later */
+#wrap {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin: 60px auto;
+  font-family: "Noto Sans Korean", sans-serif;
+  font-weight: 100; }
+
+/* for sidebar (Hide for mobile, show later) */
 .sidebar {
+  width: 20%;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 2px solid #673AB7; }
+
+.nav-sidebar {
   display: none; }
 
 @media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 64px;
-    bottom: 0;
-    left: 0;
-    
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    /* Scrollable contents if viewport is shorter than content. */
-    /*background-color: #f5f5f5;*/
-    border: 2px solid #673AB7;
-    width: 15%; 
-    }
-  }
-/* Sidebar navigation */
-.nav-sidebar {
-  margin-right: -21px;
-  margin-bottom: 20px;
-  margin-left: -40px; }
-
+  .nav-sidebar {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: -21px;
+    margin-bottom: 20px;
+    margin-left: -40px;
+    border: 2px solid #673AB7; } }
 .nav-sidebar > li {
   margin-top: 8px; }
 
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px; }
+  padding: auto 20px auto 10px; }
 
 .nav-sidebar > .selected > a,
 .nav-sidebar > .selected > a:hover,
@@ -54,24 +50,13 @@ li.selected {
   font-weight: 500;
   color: #673AB7; }
 
-/*
- * Main content
- */
 .main {
-  
-  margin-top:64px;
-  padding:20px;
-  border: 2px solid #673AB7; 
-  
-  }
+  width: 100%;
+  border: 2px solid #673AB7; }
 
 @media (min-width: 768px) {
   .main {
-    
-    margin-left: 16%;
-    margin-right: 1%; 
-    }
-  }
+    width: 80%; } }
 /*for card UI */
 .intro {
   background-color: white;
@@ -94,22 +79,24 @@ li.selected {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
 /*# sourceMappingURL=mc.component.css.map */
+h2 {
+  margin-top: 80px; }
 
-
-
-h2{ margin-top: 80px; }
-.more-view{ border: 2px solid #673AB7; width:100%; height:auto; 
-margin-bottom:160px;   margin-top: 20px;  padding:8px; }
-
-
+.more-view {
+  border: 2px solid #673AB7;
+  width: 100%;
+  height: auto;
+  margin-bottom: 160px;
+  margin-top: 20px;
+  padding: 8px; }
 
 .usage-item {
-  margin:10px;
-  padding: 30px; 
-  border : 2px solid #673AB7;
-}
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid #673AB7; }
 
 img {
-  max-width:600px;
-  border : 2px solid #673AB7;
-}
+  max-width: 600px;
+  border: 2px solid #673AB7; }
+
+/*# sourceMappingURL=menses-cup.component.css.map */

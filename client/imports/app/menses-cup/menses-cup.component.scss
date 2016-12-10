@@ -1,0 +1,122 @@
+
+
+$fontName : 'Noto Sans Korean', sans-serif;
+
+$deepPupple: #673AB7;
+$color-default : #9e9e9e;
+$color-list-selected: white;
+
+
+a {
+  text-decoration: none;
+  color: $color-default;
+}
+ul { list-style-type: none; }
+li.selected { background-color: $color-list-selected; }
+
+
+
+#wrap { 
+        display: -webkit-flex;
+        display:flex;
+        flex-flow: row nowrap; 
+
+        width:100%;
+        margin: 60px auto;
+
+        font-family: $fontName;
+        font-weight: 100;
+}
+
+/* for sidebar (Hide for mobile, show later) */
+
+
+.sidebar {
+  width: 20%; 
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 2px solid $deepPupple;
+}
+
+
+.nav-sidebar{display: none;}
+@media (min-width: 768px) {
+  .nav-sidebar {
+    display: -webkit-flex;
+    display:flex;
+    flex-flow: column nowrap;
+    
+    margin-right: -21px;
+    margin-bottom: 20px;
+    margin-left: -40px; 
+
+    border: 2px solid $deepPupple;
+  }
+}
+
+
+
+.nav-sidebar > li { margin-top: 8px; }
+.nav-sidebar > li > a { padding :auto 20px auto 10px;  }
+.nav-sidebar > .selected > a, 
+.nav-sidebar > .selected > a:hover,
+.nav-sidebar > .selected > a:focus { font-weight: 500;  color: $deepPupple; }
+
+
+
+.main {
+  width: 100%; 
+  border: 2px solid $deepPupple; 
+}
+
+@media (min-width: 768px) {
+  .main { width: 80%;  }
+  }
+
+
+
+
+
+/*for card UI */
+.intro {
+  background-color: white;
+  padding: 80px;
+  margin: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.intro:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.item {
+  background-color: white;
+  padding: 10px 10px 10px 30px;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+/*# sourceMappingURL=mc.component.css.map */
+
+
+
+h2{ margin-top: 80px; }
+.more-view{ border: 2px solid $deepPupple; width:100%; height:auto; 
+margin-bottom:160px;   margin-top: 20px;  padding:8px; }
+
+
+
+.usage-item {
+  margin:10px;
+  padding: 30px; 
+  border : 2px solid $deepPupple;
+}
+
+img {
+  max-width:600px;
+  border : 2px solid $deepPupple;
+}
