@@ -15,7 +15,7 @@ li.selected {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  margin: 64px auto;
+  margin: 20px auto;
   font-family: "Noto Sans Korean", sans-serif;
   font-weight: 100; }
 
@@ -30,19 +30,19 @@ li.selected {
     flex-flow: column nowrap;
     bottom: 0;
     left: 0;
+    padding-top: 3%;
     width: 11%;
     overflow-x: hidden;
     overflow-y: auto;
-    border: 2px solid #673AB7; } }
+    border: 2px solid #e5e5e5; } }
 .sidebar-index-box {
-  border: 2px solid #673AB7; }
+  position: fixed;
+  width: 11%; }
 
 .sidebar-index-box > div {
   margin-top: 8px;
+  padding: 6px 4px 6px 10px;
   width: 100%; }
-
-.sidebar-index-box > div > a {
-  padding-left: 10px; }
 
 .sidebar-index-box > .selected {
   background-color: #673AB7; }
@@ -61,16 +61,74 @@ li.selected {
     width: 88%;
     margin-left: 4px;
     padding: 100px;
-    border: 2px solid #673AB7;
+    border: 2px solid none;
     color: #424242;
     font-size: 20px;
     letter-spacing: -0.6px; } }
-.item {
-  border: 2px solid #673AB7;
+.intro {
+  border: 2px solid none;
   width: 100%; }
 
+.intro > p {
+  width: 85%;
+  line-height: 180%;
+  font-size: 17px;
+  font-weight: 400; }
+
+/* item */
+.item {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 12%;
+  padding-right: 5%;
+  margin-top: 10%;
+  border: 2px solid none;
+  width: 100%; }
+
+.item > h4 {
+  align-self: stretch;
+  height: auto;
+  border: 2px solid none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%; }
+
 .item > p {
-  width: 85%; }
+  align-self: stretch;
+  margin-left: 50px;
+  /* for test*/
+  width: 70%;
+  height: auto;
+  border: 2px solid none;
+  line-height: 180%;
+  font-size: 17px;
+  font-weight: 400; }
+
+.more-view {
+  border: 2px solid #e5e5e5;
+  margin: 20px auto;
+  padding-left: 12%;
+  line-height: 180%;
+  font-size: 17px;
+  font-weight: 400; }
+
+.area-ref {
+  border: 2px solid #e5e5e5;
+  margin-top: 10%;
+  line-height: 180%;
+  font-size: 17px;
+  font-weight: 400; }
+
+.usage-item {
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid #673AB7; }
+
+img {
+  width: 80%;
+  border: 2px solid #673AB7; }
 
 /*for card UI 
 .intro {
@@ -94,24 +152,5 @@ li.selected {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 */
 /*# sourceMappingURL=mc.component.css.map */
-h2 {
-  margin-top: 80px; }
-
-.more-view {
-  border: 2px solid #673AB7;
-  margin-top: 20px;
-  margin-bottom: 160px;
-  padding: 8px;
-  width: 80%;
-  height: auto; }
-
-.usage-item {
-  margin: 10px;
-  padding: 30px;
-  border: 2px solid #673AB7; }
-
-img {
-  max-width: 600px;
-  border: 2px solid #673AB7; }
 
 /*# sourceMappingURL=menses-cup.component.css.map */
