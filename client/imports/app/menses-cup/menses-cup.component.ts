@@ -50,6 +50,8 @@ export class MensesCupComponent {
         };
 
         detailMessage: string = '자세히보기';
+
+        usageItem_1_1: boolean = false;
         
 
         public state: string = 'inactive';
@@ -102,8 +104,12 @@ export class MensesCupComponent {
                 );
         }
 
-        checkValue(values: any): void{
+        checkValue(e: any): void{
+
                 console.log("clicked!");
+                let targetId = e.target.id;
+                 
+
                 console.log(values);
         }
 
