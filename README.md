@@ -1,3 +1,7 @@
+##modal ref
+- [w3school modal example](http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2)
+- [w3school modal ref](http://www.w3schools.com/howto/howto_css_modals.asp)
+
 ## css styles
 
 - `vertical-align` : block속성이 기본인 요소들에는 적용되지 않는다. 따라서 `<span>` 과 class를 활용하여 작업중이다.

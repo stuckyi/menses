@@ -1,26 +1,23 @@
 
  
 <div class="nav-box">
+        <a routerLink="/home" routerLinkActive="active">
+                <img id="nav-home" src="mensescup.png" width="70">
+        </a>  
         <nav>
-                 <a routerLink="/home" routerLinkActive="active">
-                        <span  id="nav-home">MENSTRUAL CUP </span>
-                </a>  
-
-                <!--
-                <a routerLink="/home" routerLinkActive="active">
-                        <span  id="nav-home">MENSTRUAL CUP </span>
-                </a>  
+                
+                
+                <a routerLink="/pad" routerLinkActive="active">일회용 패드</a>
+                <a routerLink="/cotton-pad" routerLinkActive="active">천 생리대</a>
                 <a routerLink="/menses-cup" routerLinkActive="active">생리컵</a>
-                
-                <a routerLink="/about" routerLinkActive="active">About</a>
-                
                 <a routerLink="/tampon" routerLinkActive="active">탐폰</a>
-                <a routerLink="/mt" routerLinkActive="active">일회용 생리대</a>
-                <a routerLink="/mt-cotton" routerLinkActive="active" >천 생리대</a>
-                -->
+                <!--<a routerLink="/about" routerLinkActive="active">About</a>-->
+                
+                
+                <!--<a routerLink="/mt-cotton" routerLinkActive="active" >천 생리대</a>-->
         </nav>
 </div>
 
-<div class="container">
-        <router-outlet></router-outlet>
-</div>
+
+<router-outlet></router-outlet>
+

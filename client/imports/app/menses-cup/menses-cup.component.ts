@@ -1,15 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Index } from '../index.model';
 import { INDEXLIST } from '../mock-indexlist';
-
-import {
-  Input,
-  trigger,
-  state,
-  style,
-  transition,
-  animate
-} from '@angular/core';
+import { IntroComponent } from './intro/intro.component';
 
 
 import template from './menses-cup.component.html';
@@ -19,21 +11,7 @@ import styles from '../../../../public/menses-cup.component.css';
 @Component({
         selector:'menses-cup',
         template,
-        styles,
-        animations: [
-            trigger('moreviewState', [
-              state('inactive', style({
-                backgroundColor: '#E8EAF6',
-                transform: 'scale(1)'
-              })),
-              state('active',   style({
-                backgroundColor: '#3F51B5',
-                transform: 'scale(1.1)'
-              })),
-              transition('inactive => active', animate('100ms ease-in')),
-              transition('active => inactive', animate('100ms ease-out'))
-            ])
-        ]
+        styles
 })
 
 export class MensesCupComponent {
@@ -55,10 +33,6 @@ export class MensesCupComponent {
         
 
         public state: string = 'inactive';
-
-
-
-        
 
         constructor() {
                 
@@ -108,9 +82,6 @@ export class MensesCupComponent {
 
                 console.log("clicked!");
                 let targetId = e.target.id;
-                 
-
-                console.log(values);
         }
 
 }
