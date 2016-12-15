@@ -13,7 +13,7 @@ import {
 
 
 import template from './menses-cup.component.html';
-import styles from './menses-cup.component.css';
+import styles from '../../../../public/menses-cup.component.css';
 
 
 @Component({
