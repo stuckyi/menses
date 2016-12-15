@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import styles from '../../../../../public/menses-cup.component.css';
-import template from './intro.component.html';
+import template from './mc-proscons.component.html';
 
 @Component({
-        selector: 'menses-cup_intro',
+        selector: 'mc-proscons',
         template,
         styles
 })
-export class IntroComponent {
+export class McProsConsComponent {
+        itemTitle: string = "장단점";
 
 }

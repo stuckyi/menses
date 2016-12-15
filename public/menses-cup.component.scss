@@ -1,4 +1,5 @@
 
+
 $fontName : 'Noto Sans Korean', sans-serif;
 $deepPupple: #673AB7;
 $color-default : #9e9e9e;
@@ -12,20 +13,43 @@ $gray300: #e0e0e0;
 $gray900 : #212121;
 $amber:  #FFC107;
 $yellow: #FFEB3B;
-$imgBackground:#64FFDA;
+$tealA200: #64FFDA;
 
-$border-color:  #673AB7;
-// $border-color:  none;
+$figcaptionColor: $yellow;
+$blockquoteColor: $yellow;
 
-a {
-  text-decoration: none;
-  color: $color-default;
+
+
+
+
+// $border-color:  #673AB7;
+$border-color:  none;
+
+
+
+///@param {Length} $width
+///@param {Length} $height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
 }
+@mixin checkArea(){
+  border: 2px solid $border-color;
+}
+
+
+
+
+
+a { color: $color-default; }
+a:hover { border-bottom: 2px solid $black; }
+a.selected { border-bottom: 2px solid $tealA200; }
+
 ul { list-style-type: none; }
 li.selected { background-color: $color-list-selected; }
+p { font-size: 1rem;}
 
-
-
+.hidden { display:none; }
 
 
 /* for sidebar (Hide for mobile, show later) */
@@ -38,46 +62,39 @@ li.selected { background-color: $color-list-selected; }
     left:0;
     margin-top :12%;
     margin-left:2%;
-
-    // overflow-x: hidden;
-    // overflow-y: auto;
   }
 }
 
 .sidebar-index-box {
   border: 2px solid $gray900;
   background-color: $white;
+
+  > div { 
+    margin-top: 3%; 
+    padding: 6px 4px 6px 10px;  
+    width:100%; 
+  }
 }
 
-.sidebar-index-box > div { 
-  margin-top: 3%; 
-  padding: 6px 4px 6px 10px;  
-  width:100%; 
-  }
-
-.sidebar-index-box > .selected { background-color: $deepPupple; }
-.sidebar-index-box > .selected > a, 
-.sidebar-index-box > .selected > a:hover,
-.sidebar-index-box > .selected > a:focus {   color: $white; }
-
-.sidebar-index-item > a > span { color:$black;}
+.sidebar-index-item {
+  > a
+     > span { color:$black;}
+}
 
 
 
 
 
-#wrap{ width:100%; }
+#wrap{ @include size(100%, auto);  }
+.main { @include size(100%, auto);  }
 
-
-.main { width: 100%;   }
 @media (min-width: 768px) {
-  #wrap > .main {
-      width:100%;
+  .main {
+      @include size(100%, auto);
+      @include checkArea();
       -moz-box-sizing: border-box;
        box-sizing: border-box;
-       
-      border: 2px solid $border-color;
-      color:#424242;
+      
     }
 }
 
@@ -87,10 +104,9 @@ li.selected { background-color: $color-list-selected; }
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
-
-  width:100%;
-  height:460px;
-  background-color:$imgBackground;
+  
+  @include size(100%, 460px);
+  background-color:$tealA200;
   // background-image: url('berlinpark.jpg');
   // background-size:cover; 
 }
@@ -98,8 +114,7 @@ li.selected { background-color: $color-list-selected; }
 
 
 div.itemList {
-  background-color:$gray100;
-  width:960px;
+  @include size(960px, auto);
   margin: 0 auto;
 }
 
@@ -107,80 +122,108 @@ div.itemList {
 .item { 
   margin-top:18%;
   padding: 0 12%;
-  background-color:$gray300;
-  border: 2px solid $border-color; 
-}
+  @include checkArea();
+   
 
-.item:nth-of-type(1){
-  margin-top:2%;
-}
-
-.item > h2 {
-    border: 2px solid $border-color;
+  > h2 {
+    @include checkArea();
     color:$black;
+  }
+
+  > p {
+    @include size(100%, auto);
+    @include checkArea();
+    margin-top:6%;
+    
+  }
+
+  > blockquote {
+    text-align:center;
+    margin:4px;
+    @include size(40%, auto);
+    border-radius:4px;
+    background-color:$blockquoteColor;
+  }
+
+  > figcaption {
+    margin-top: 5%;
+    padding:20px;
+    @include size(70%, auto);
+    border-radius:4px;
+    background-color:$figcaptionColor;
+  }
+
+  :nth-of-type(1){ margin-top:2%; }
+
 }
 
-.item > p {
-  width:70%; 
-  margin-top:6%;
-  border: 2px solid $border-color;
-}
-
-.item > blockquote {
-  text-align:center;
-  margin:4px;
-  width:40%;
-  border-radius:4px;
-  background-color:$yellow;
-}
-.item > figcaption {
-  margin-top: 5%;
-  padding:20px;
-  width:70%;
-  border-radius:4px;
-  background-color:$yellow;
-}
 
 
-
-
-
-
-
-//card
 .card {
-  margin-top:18%;
-  width: 960px;
-  height:800px;
-  border: 2px solid $border-color; 
-
-  padding:2%;
 
   display:flex;
   flex-flow : row wrap;
   align-items:stretch;
   justify-content: space-between;
   
+  @include size(960px, 900px);
+  @include checkArea();
+  
+  margin-top:18%;
+  padding:2%;
+
 }
 
-.card > .card_1depth {
+
+.card_1depth {
   display:flex;
   flex-flow: column nowrap;
-  
-  width:33%;
-  
-  margin-top:2px;
-  background-color:$gray900;
-}
-
-.card > .card_1depth > .card_2depth {
-  background-color:$amber;
-  height: 100%;
+  @include size(33%, auto);
   margin-top:2px;
 }
 
+.card_2depth{
+  display:flex;
+  flex-flow: column nowrap;
+  @include size(auto, 100%);
+  
+  border: 2px solid $gray900;
 
-.card_2depth > h4 { text-align:center; }
+    > h4 {
+      text-align:center;
+      padding:20px;
+      margin-top:2px;
+    }
+
+    > img{
+      @include size(50%, auto);
+      margin:auto;
+    }
+
+    :nth-of-type(2n+1) {
+      background-color:$tealA200;
+      @include size(auto, 64%);
+    }
+    :nth-of-type(2n) { @include size(auto, 36%); }
+}
+
+.card_3depth{
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @include size(100%, auto);
+  padding:10px;
+  padding-left:20px;
+  text-align:left;
+
+  > span{
+    @include size(74px, auto);
+  }
+
+}
+
 
 
 .more-view{
@@ -190,17 +233,14 @@ div.itemList {
 }
 
 .area-ref {
-  border: 2px solid $gray100;
+  @include checkArea();
   margin-top : 10%;
 }
-
-
-
 
 .usage-item {
   margin:10px;
   padding: 30px; 
-  border : 2px solid $deepPupple;
+  @include checkArea();
 }
 
 

@@ -4,6 +4,7 @@
 
 ## css styles
 
+- `<img align="left|right|middle|top|bottom">`
 - `vertical-align` : block속성이 기본인 요소들에는 적용되지 않는다. 따라서 `<span>` 과 class를 활용하여 작업중이다.
   - 이럴 때 발색하는 문제는 없을까? 예를들어 시맨틱웹?
 

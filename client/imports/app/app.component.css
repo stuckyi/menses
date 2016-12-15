@@ -11,8 +11,10 @@
    ========================================================================== */
 
 html {
+  
+  font-size: 17px;
   font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
+  line-height: 1.764; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
 }
@@ -456,15 +458,8 @@ template {
  * Add the correct display in IE 10-.
  */
 
-[hidden] {
-  display: none;
-}
-
-
-ul{
-    list-style-type: none;
-}
-
+[hidden] { display: none; }
+ul{ list-style-type: none; }
 *{margin: 0; padding: 0; box-sizing: border-box;}
 
 
@@ -483,9 +478,7 @@ html:lang(ko){
 a { text-decoration: none; }
 ul { list-style-type: none; }
 
-#nav-home {
-  position:fixed;
-}
+#nav-home { position:fixed; }
 
 nav {
   top:0;

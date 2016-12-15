@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Index } from '../index.model';
 import { INDEXLIST } from '../mock-indexlist';
-import { IntroComponent } from './intro/intro.component';
+
+import { McIntroComponent } from './mc-intro/mc-intro.component';
+import { McShapeComponent } from './mc-shape/mc-shape.component';
+import { McPrincipleComponent } from './mc-principle/mc-principle.component';
+import { McUsageComponent } from './mc-usage/mc-usage.component';
+import { McHistoryComponent } from './mc-history/mc-history.component';
+import { McPurchasingComponent } from './mc-purchasing/mc-purchasing.component';
+import { McProsConsComponent } from './mc-proscons/mc-proscons.component';
+
 
 
 import template from './menses-cup.component.html';
 import styles from '../../../../public/menses-cup.component.css';
-
 
 @Component({
         selector:'menses-cup',
@@ -15,9 +22,11 @@ import styles from '../../../../public/menses-cup.component.css';
 })
 
 export class MensesCupComponent {
+        currentSection: string = '생리컵';
+
         selectedIndex: Index;
         indexList: Index[];
-
+        
         detailstate:any =  {
                 'usage1'  :  false, 
                 'usage2'  :  false,
@@ -39,26 +48,20 @@ export class MensesCupComponent {
         }
 
         ngOnInit(): void{
+                this.selectedIndex = { name: '인트로', name_eng: 'intro', endScroll: '#intro' };
                 this.indexList = [
                         { name: '인트로', name_eng : 'intro' , endScroll: '#intro' },
                         { name: '생김새', name_eng : 'shape' , endScroll: '#shape' },
                         { name: '동작원리', name_eng : 'principle' , endScroll: '#principle' },
                         { name: '사용법', name_eng : 'usage' , endScroll: '#usage' },
-                        { name: '마켓', name_eng : 'market' , endScroll: '#market' },
-                        { name: '트렌드', name_eng : 'trend' , endScroll: '#trend' },
-                        { name: '역사', name_eng: 'trend' , endScroll: '#trend' },
+                        { name: '역사', name_eng: 'history' , endScroll: '#history' },
                         { name: '구매처 및 가격', name_eng: 'purchasing' , endScroll: '#purchasing' },
-                        { name: '손잡이 길이', name_eng: 'handle' , endScroll: '#handle' },
-                        { name: '크기', name_eng: 'size' , endScroll: '#size' },
-                        { name: '탄력', name_eng: 'elasticty' , endScroll: '#elasticty' },
-                        { name: '소재', name_eng: 'material' , endScroll: '#material' },
-                        { name: '장점', name_eng: 'pros' , endScroll: '#pros' },
-                        { name: '단점', name_eng : 'cons' , endScroll: '#cons' }
+                        { name: '장단점', name_eng: 'proscons' , endScroll: '#proscons' }
                 ];
         }
        
         
-        onSelect(index:Index): void {
+        onSelect(index: Index): void {
                 this.selectedIndex = index;
         }
 
@@ -79,8 +82,6 @@ export class MensesCupComponent {
         }
 
         checkValue(e: any): void{
-
-                console.log("clicked!");
                 let targetId = e.target.id;
         }
 

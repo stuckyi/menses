@@ -8,5 +8,5 @@ import template from './pad.component.html';
         styles
 })
 export class PadComponent {
-        
+        sectionTitle: string = '일회용 패드';
 }

@@ -4,17 +4,11 @@ a {
 a:hover {
   border-bottom: 2px solid #000; }
 
-a.selected {
-  border-bottom: 2px solid #64FFDA; }
-
 ul {
   list-style-type: none; }
 
 li.selected {
   background-color: white; }
-
-p {
-  font-size: 1rem; }
 
 .hidden {
   display: none; }
@@ -37,6 +31,10 @@ p {
     margin-top: 3%;
     padding: 6px 4px 6px 10px;
     width: 100%; }
+  .sidebar-index-box > .selected {
+    border-bottom: 2px solid #64FFDA; }
+    .sidebar-index-box > .selected > a, .sidebar-index-box > .selected a:hover, .sidebar-index-box > .selected a:focus {
+      color: #fff; }
 
 .sidebar-index-item > a
 > span {
@@ -80,7 +78,7 @@ div.itemList {
     border: 2px solid none;
     color: #000; }
   .item > p {
-    width: 100%;
+    width: 70%;
     height: auto;
     border: 2px solid none;
     margin-top: 6%; }
