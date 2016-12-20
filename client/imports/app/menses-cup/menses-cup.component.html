@@ -22,10 +22,12 @@
 
         <!-- main content area -->
         <div class="main">
-                <div class="intro">
-                        <h4>{{currentSection}}</h4>
-                        <h1>{{selectedIndex.name}}</h1>
-                </div>
+                <section>
+                        <div class="intro">
+                                <h1>{{selectedIndex.name}}</h1>
+                        </div>
+                </section>
+                
 
                 <div [hidden]="selectedIndex.name_eng != 'intro'" ><mc-intro></mc-intro></div>
                 <div [hidden]="selectedIndex.name_eng != 'shape'" ><mc-shape></mc-shape></div>
