@@ -2,33 +2,17 @@
 
 <header class="header">
         <div class="logo">
-        <div><p>월경용품</p></div>
+        <div><a routerLink="/home" routerLinkActive="active"><p>월경용품</p></a></div>
         </div>
         <div class="menu">
         <ul>
-                <li>일회용 패드</li>
-                <li>천 생리대</li>
-                <li>생리컵</li>
-                <li>탐폰</li>
+                <li><a routerLink="/pad" routerLinkActive="active">일회용 패드</a></li>
+                <li><a routerLink="/cotton-pad" routerLinkActive="active">천 생리대</a></li>
+                <li><a routerLink="/menses-cup" routerLinkActive="active">생리컵</a></li>
+                <li><a routerLink="/tampon" routerLinkActive="active">탐폰</a></li>
         </ul>
         </div>
 </header> 
-<div class="nav-box">
-        <a routerLink="/home" routerLinkActive="active">
-                <img id="nav-home" src="mensescup.png" width="70">
-        </a>  
-        <nav>
-                <a routerLink="/pad" routerLinkActive="active">일회용 패드</a>
-                <a routerLink="/cotton-pad" routerLinkActive="active">천 생리대</a>
-                <a routerLink="/menses-cup" routerLinkActive="active">생리컵</a>
-                <a routerLink="/tampon" routerLinkActive="active">탐폰</a>
-                <!--<a routerLink="/about" routerLinkActive="active">About</a>-->
-                
-                
-                <!--<a routerLink="/mt-cotton" routerLinkActive="active" >천 생리대</a>-->
-        </nav>
-</div>
 
 
 <router-outlet></router-outlet>
-

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import styles from '../../../../../public/menses-cup.component.css';
+import gridStyles from '../../../../../public/typo.css';
 import template from './mc-usage.component.html';
 
 @Component({
         selector: 'mc-usage',
         template,
-        styles
+        gridStyles
 })
 export class McUsageComponent {
 

@@ -1,45 +1,29 @@
+<section class="side_bar">
+        <ul>
+        <li>생리컵</li>
+        <li>생리컵이란?</li>
+        <li>제품 정보</li>
+        <li>역사</li>
+        <li>장단점</li>
+        <li>이슈</li>
+        <li>생김새</li>
+        <li class="selceted">작동원리</li>
+        <li>사용법</li>
+        <li>생리컵의 속성</li>
+        </ul>
+</section>
 
 
 
 
-<!-- sidebar area -->
-<div class="sidebar">
-        <div class="sidebar-index-box">
-                <div class="sidebar-index-item" 
-                *ngFor="let index of indexList"
-                (click)="onSelect(index)"
-                [class.selected]="index === selectedIndex">
-                <a href="#"pageScroll
-                   [class.selected]="index === selectedIndex"
-                   href={{index.endScroll}} > 
-                        <span> {{ index.name }}</span>
-                </a>
-                </div>
-        </div>
-</div>
+<!--<div id="wrap">-->
+        <section class="intro">
+                <div class=intro_title> <h1>사용법</h1></div>
+        </section>
 
-<div id="wrap">
-
-        <!-- main content area -->
-        <div class="main">
-                <section>
-                        <div class="intro">
-                                <h1>{{selectedIndex.name}}</h1>
-                        </div>
-                </section>
-                
-
-                <div [hidden]="selectedIndex.name_eng != 'intro'" ><mc-intro></mc-intro></div>
-                <div [hidden]="selectedIndex.name_eng != 'shape'" ><mc-shape></mc-shape></div>
-                <div [hidden]="selectedIndex.name_eng != 'principle'" ><mc-principle></mc-principle></div>
-                <div [hidden]="selectedIndex.name_eng != 'usage'" ><mc-usage></mc-usage></div>
-                <div [hidden]="selectedIndex.name_eng != 'history'" ><mc-history></mc-history></div>
-                <div [hidden]="selectedIndex.name_eng != 'purchasing'" ><mc-purchasing></mc-purchasing> </div>
-                <div [hidden]="selectedIndex.name_eng != 'proscons'" ><mc-proscons></mc-proscons> </div>
-
-        </div> 
-        <!-- main end -->
-
-
-</div><!-- wrap end -->
+        <section class="contents">
+                <mc-intro></mc-intro>
+        </section>
+        
+<!--</div>-->
 

@@ -1,0 +1,254 @@
+/* 타이포그래피 */
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+
+
+html{
+    background-color: white;
+    font-size: 17px;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 30px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+p{
+    margin: 30px 0 15px 0;
+}
+
+h1{
+    font-size: 3rem;
+
+}
+
+h2{
+    margin-top: 90px;
+    font-size: 2rem;
+}
+
+/*h3요소가 앞에 존재하는 h2를 선택*/
+h3~h2{
+    margin-top: 0px;
+}
+
+h3{
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+
+blockquote{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: -0.04rem;
+    color: darkgray;
+    margin-bottom: 30px;
+}
+
+a{
+    color: #22B2A1;
+}
+
+/* 스타일링 */
+
+.header{
+    z-index: 9999;
+/*    background-color: hsla(165,100%,75%,1);*/
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    top:0;
+    width: 100%;
+    min-width: 960px;
+}
+/*
+
+.header_bg{
+        z-index: 5000;
+        background-color: white;
+        position: fixed;
+        top:0;
+        width: 100%;
+        min-width: 960px;
+}
+*/
+
+.logo{
+    width: 10%;
+    min-width: 100px;
+    text-align: center;
+/*    background-color: green;*/
+}
+
+.menu{
+    width: 100px;
+    position: absolute;
+}
+
+.menu ul{
+    display: flex;
+    position: fixed;
+    right:10px;
+    flex-flow: row wrap;
+    list-style: none;
+    text-align: center;
+}
+
+.menu ul li{
+    width: 100px;
+}
+
+.wrap{
+    z-index:1000;
+    position: relative;
+    width: 100%;
+    min-width: 960px;
+}
+
+.side_bar{
+    z-index: 6000;
+    position: fixed;
+    line-height: 30px;
+    top:80px;
+    left: 42px;
+    width: 140px;
+/*    background-color: pink;*/
+   
+    
+}
+
+.side_bar ul{
+     list-style: none;
+    font-weight: bold;
+}
+
+.side_bar ul:first-child{
+}
+
+.intro{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+}
+
+.contents{
+    margin: 0 auto;
+    width: 780px;
+}
+
+.contents .text{
+    width: 620px;
+    margin: 0 auto;
+}
+
+.contents .whole_img{
+    width: 780px;
+    margin: 0 auto;
+}
+
+.contents .middle_img{
+    width: 620px;
+    margin: 0 auto;
+}
+
+.intro_title{
+    width: 620px;
+    position: absolute;
+    left: 282px;
+    bottom: 10px;
+}
+
+.selected{
+    border-bottom: 1px solid black;
+}
+
+
+/* 접는 방법에 대한 표*/
+.fold{
+    margin-top:30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+/*    background-color: pink;*/
+    width: 100%;
+    
+}
+
+.fold > div{
+    width: 180px;
+    height: 280px;
+    margin-top: 30px;
+/*    margin-bottom: 30px;*/
+/*    padding: 10px;*/
+/*    background-color: gray;*/
+/*    border-top: 6px solid aquamarine;*/
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url(../img/161218_c-fold_trans_bg.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+    justify-content: space-around;
+}
+
+.fold > div > div{
+    height: 40%;
+}
+
+.fold_name{
+    text-align: center;
+    font-weight: bold;
+}
+
+.fold_explain{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.fold_explain div{
+    width: 50%;
+/*    background-color: aquamarine;*/
+}
+
+.value_index{
+    padding: 10px 0 10px 20px;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.value_data{
+    padding: 10px 20px 10px 0;
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+
+
+.instruction{
+    font-size: 0.9rem;
+    padding: 15px 30px 15px 30px;
+    background-color: #efefef;
+    border-radius: 0.5rem;
+    margin-top: 30px;
+    margin-bottom: 60px;
+/*    padding: px;*/
+}
+
+
+.step{
+    margin-top: 90px;
+    border-top: 6px dotted aquamarine;
+}

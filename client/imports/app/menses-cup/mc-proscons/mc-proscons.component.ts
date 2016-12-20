@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import styles from '../../../../../public/menses-cup.component.css';
 import template from './mc-proscons.component.html';
-
+import gridStyles from '../../../../../public/typo.css';
 @Component({
         selector: 'mc-proscons',
         template,
-        styles
+        gridStyles
 })
 export class McProsConsComponent {
         itemTitle: string = "장단점";
