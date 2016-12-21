@@ -191,10 +191,7 @@ a{
     width: 180px;
     height: 280px;
     margin-top: 30px;
-/*    margin-bottom: 30px;*/
-/*    padding: 10px;*/
-/*    background-color: gray;*/
-/*    border-top: 6px solid aquamarine;*/
+
     display: flex;
     flex-flow: column nowrap;
     background-image: url(../img/161218_c-fold_trans_bg.png);
@@ -256,22 +253,34 @@ a{
 
 
 
-/* 여기부터 테스트 */
+/* 여기부터 카드 슬라이드 */
 .cards {
     display:flex;
     flex-flow: row nowrap;
     border: 2px solid palevioletred;
-    /*overflow:hidden;*/
-    width:900px;
-    height:240px;
+    overflow:hidden;
+    width:960px;
+    height:280px;
+
 }
 
 .usageCard {
-    flex: 0 0 150px;
-    width:150px;
+    flex: 0 0 180px;
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    width:180px;
     height:100%;
     border: 2px solid aqua;
+    background-image: url(../img/161218_c-fold_trans_bg.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+    justify-content: space-around;
+
 }
+
+/* 맨 위로가기 버튼 */
 
 #backToTop {
     position:fixed;

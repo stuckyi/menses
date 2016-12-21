@@ -1,17 +1,6 @@
 import { Component } from '@angular/core';
 
 
-import {
-  Input,
-  trigger,
-  state,
-  style,
-  transition,
-  animate
-} from '@angular/core';
-
-
-
 import gridStyle from '../../../../public/typo.css';
 import template from './tampon.component.html';
 
@@ -22,59 +11,19 @@ import template from './tampon.component.html';
 })
 export class TamponComponent {
         sectionTitle: string = '탐폰';
-        cardState: string = 'next';
-        
-        transformLev = { before: 0, current: 100 };
-
-        currentIndex: number = 7;
-
         
 
+        transformLev = ['-350%', '-300%', '-250%', '-200%', '-150%', '-100%', '-50%', '0','50%', '100%', '150%', '200%', '250%', '300%', '350%'];
+        currentIndex: number = 7; //0%
         
 
-        onNext(): void {
-                let usageCardElement = document.getElementsByClassName('usageCard');
-                
-                let fromX = 'translateX(' + this.transformLev.before + 'px)';
-                let toX = 'translateX(' + this.transformLev.current + 'px)';
-                
-                
-                for (let usage of usageCardElement) {
-                        
-                        usage.animate([
-                                // keyframes
-                                { transform: fromX }, 
-                                { transform: toX }
-                        ], { 
-                                // timing options
-                                duration: 500
-                                // iterations: Infinity
-                        });
-                }
-                this.currentIndex += 1;
-
-        }
-        onPrev(): void{
+        //카드 슬라이드
+        moveCard(dir: string): void {
                 let usageCardElement = document.getElementsByClassName('usageCard');
                 for (let usage of usageCardElement) {
-                        usage.style.background = 'red'; //for test
                         usage.style.transform = 'translate(' + this.transformLev[this.currentIndex] + ')';
-                        console.log('translate(' + this.transformLev[this.currentIndex] + ')');
                 }
-                this.currentIndex -= 1;
+                (dir === 'next') ? this.currentIndex += 1 : this.currentIndex -= 1;
         }
 
-        checkAttr(e: event): void {
-                
-
-
-                let usageCardElement = document.getElementsByClassName('usageCard');
-                for (let usage of usageCardElement) {
-                        usage.style.background = 'red';
-                        usage.style.transform = 'translate(-100%)';
-                        
-                }
-                
-                console.log(usageCardElement);
-        }
 }
