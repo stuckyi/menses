@@ -1,3 +1,4 @@
+
 /* 타이포그래피 */
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -251,4 +252,39 @@ a{
 .step{
     margin-top: 90px;
     border-top: 6px dotted aquamarine;
+}
+
+
+
+/* 여기부터 테스트 */
+.cards {
+    display:flex;
+    flex-flow: row nowrap;
+    border: 2px solid palevioletred;
+    /*overflow:hidden;*/
+    width:900px;
+    height:240px;
+}
+
+.usageCard {
+    flex: 0 0 150px;
+    width:150px;
+    height:100%;
+    border: 2px solid aqua;
+}
+
+#backToTop {
+    position:fixed;
+    z-index:400;
+    top:40%;
+    left:2%;
+
+    background-color:lightcoral;
+    width:400;
+    height:320;
+    color:white;
+}
+#backToTop > p {
+    padding:10px;
+    font-weight:700;
 }

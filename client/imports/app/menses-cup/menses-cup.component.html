@@ -26,6 +26,22 @@
                 <div [hidden]="selectedIndex.name_eng != 'history'" ><mc-history></mc-history></div>
                 <div [hidden]="selectedIndex.name_eng != 'purchasing'" ><mc-purchasing></mc-purchasing> </div>
                 <div [hidden]="selectedIndex.name_eng != 'proscons'" ><mc-proscons></mc-proscons> </div>
+        </section>
+
+        <section class="footer">
+                <div class="navigationEach">
+
+                </div>
+
+                <span id="goToBefore" 
+                (click)="navigateDir($event)"
+                [hidden]="selectedIndex.id === 0">
+                 before :
+                </span> 
+
+                <span id="goToNext"
+                 (click)="navigateDir($event)"
+                 [hidden]="selectedIndex.id === (IndexList.length-1)">  next : </span>
         </section>    
 </div>
 

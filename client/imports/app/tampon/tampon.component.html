@@ -1,6 +1,6 @@
 <section class="side_bar">
         <ul>
-        <li>생리컵</li>
+        <li>{{sectionTitle}}</li>
         <li>생리컵이란?</li>
         <li>제품 정보</li>
         <li>역사</li>
@@ -16,14 +16,34 @@
 
 
 
+
 <!--<div id="wrap">-->
         <section class="intro">
                 <div class=intro_title> <h1>사용법</h1></div>
         </section>
 
         <section class="contents">
-                <mc-intro></mc-intro>
+
+                <div class="cards">
+                        <div class="usageCard" (click)="checkAttr($event)">1</div>
+                        <div class="usageCard">2</div>
+                        <div class="usageCard">3</div>
+                        <div class="usageCard">4</div>
+                        <div class="usageCard">5</div>
+                        <div class="usageCard">6</div>
+                </div>
+                
+
+
+                <button (click)="onPrev()">
+                        <i class="material-icons md-48">navigate_before</i>
+                </button>
+                <button (click)="onNext()">
+                        <i class="material-icons md-48">navigate_next</i>
+                </button>
+                
         </section>
         
 <!--</div>-->
+
 
