@@ -1,5 +1,9 @@
+import { WindowRef } from './WindowRef';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
@@ -21,6 +25,8 @@ import { McPrincipleComponent } from './menses-cup/mc-principle/mc-principle.com
 import { McProsConsComponent } from './menses-cup/mc-proscons/mc-proscons.component';
 import { McPurchasingComponent } from './menses-cup/mc-purchasing/mc-purchasing.component';
 
+import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
+
 
 @NgModule({
   imports: [
@@ -33,6 +39,7 @@ import { McPurchasingComponent } from './menses-cup/mc-purchasing/mc-purchasing.
     MensesCupComponent,
     TamponComponent,
     PadComponent,
+      PadIntroComponent,
     CottonPadComponent,
     Page404Component,
     McIntroComponent,
@@ -45,6 +52,7 @@ import { McPurchasingComponent } from './menses-cup/mc-purchasing/mc-purchasing.
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  providers:[ WindowRef ]
 })
 export class AppModule {}

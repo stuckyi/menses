@@ -1,59 +1,41 @@
 
 
+<section class="side_bar">
+        <ul>
+                <li *ngFor="let index of IndexList"
+                        (click)="onSelect(index)"
+                        [class.selected] = 'index === selectedIndex'>
+                        {{index.name}}
+                </li>
+        </ul>
+</section>
 
 
-<!-- sidebar area -->
-<div class="sidebar">
-        <div class="sidebar-index-box">
-                <div class="sidebar-index-item" 
-                *ngFor="let index of indexList"
-                (mouseover)="onSelect(index)"
-                [class.selected]="index === selectedIndex">
-                <a  href="#"
-                        pageScroll href={{index.endScroll}}>
-                        <span> {{ index.name }}</span>
-                </a>
+
+
+<div id="wrap">
+        <section class="intro">
+                <div class=intro_title> <h1>{{selectedIndex.name}}</h1></div>
+        </section>
+
+        <section class="contents">
+                <div [hidden]="selectedIndex.name_eng != 'intro'" ><pad-intro></pad-intro></div>
+        </section>
+
+        <section class="footer">
+                <div class="navigationEach">
+
                 </div>
-        </div>
+
+                <span id="goToBefore" 
+                (click)="navigateDir($event)"
+                [hidden]="selectedIndex.id === 0">
+                 before :
+                </span> 
+
+                <span id="goToNext"
+                 (click)="navigateDir($event)"
+                 [hidden]="selectedIndex.id === (IndexList.length-1)">  next : </span>
+        </section>    
 </div>
-
-<div id="wrap">
-
-
-
-        <!-- main content area -->
-        <div class="main">
-
-                <div class="intro">
-                        <h4>{{sectionTitle}}</h4>
-                        <h1>사용법</h1>
-                        
-                </div>
-
-                <div class="itemList">
-                        <div class="item">
-                                <h2>{{sectionTitle}}를 사용하는 단계</h2>
-                                <p>{{sectionTitle}}는 질내에 넣고 시간이 흐른 뒤 생리혈이 어느 정도 모이면 빼내어 비웁니다. 생리 기간 동안에는 {{sectionTitle}}를 빼내서 씻은 다음 다시 넣어 사용합니다. 과정은 간단하지만 처음에는 사용하기 어려우니, 각 단계에 대한 자세한 설명을 숙지한 후 사용합니다.
-                                </p>
-
-                                <p> 말은 쉽지만 막상 사용해보려면 궁금한 점이 많이 생기게 된다.
-                                </p>
-
-
-                                
-
-                                <figcaption>
-                                        아래는 {{sectionTitle}}를 사용하는 과정에 대한 그림입니다. 각 과정을 누르면 해당하는 과정에 대한 설명 부분으로 볼 수 있습니다. 전체 과정을 주욱 보고 싶다면 스크롤을 계속 내려주세요. 
-                                </figcaption>
-                        </div>
-                        
-
-
-                        <div class="item">
-                                <h2>1단계 <br/> 손 씻고 {{sectionTitle}} 준비하기</h2>
-                                <p>{{sectionTitle}} 입기 전에 손을 깨끗이 씻어줍니다. 보관해두었던 {{sectionTitle}}를 꺼내어 손으로 잡습니다.</p>
-                        </div>
-        </div>
-</div> 
-
 
