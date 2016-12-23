@@ -1,0 +1,423 @@
+@charset "UTF-8";
+
+/* typo */
+
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+html:lang(ko) {
+  font-size: 17px;
+} //default font size
+$fontSize0: 100%; //body
+$fontSize1: 300%; //h1
+$fontSize2: 200%; //h2
+$fontSize3: 120%; //h3, blockquote, .history_box > .title
+$fontSize4: 110%; //h4
+$fontSize5: 90%; //instruction
+$fontSize6: 80%; //.value_index, .value_data
+$lineHeight0: 1.7647058824rem; //default, .side_bar
+$lineHeight1: 2rem; //blockquote
+$lineHeight2: 1.5rem; //.value_index, .value_data
+$font-sans: 'Noto Sans KR',
+sans-serif; //default font-family
+$font-serif: 'Nanum Myeongjo',
+serif;
+
+/* color */
+
+$main-color: aquamarine;
+$main-color-light: #92FFFC;
+$main-color-dark: #00C4C4;
+$sub-color: violet; //아직 미정
+$point-color: orange; //아직 미정
+$bg-color: #efefef;
+$fontCol-black: black;
+$fontCol-white: white;
+$fontCol-blockquote: darkgray;
+$fontCol-aquamarine: #22B2A1;
+$bgCol-intro: $main-color;
+$bgCol-instruction: $bg-color;
+
+/*space*/
+
+$gutter-width: 20px; //여백 가로 최소 사이즈
+$column-width: 60px; //단 가로 최소 사이즈
+$baseline-height: 30px; //세로 기준 사이즈
+$margin-height1: $baseline-height/2; //15px
+$margin-height2: $baseline-height; //30px
+$margin-height3: $baseline-height*2; //60px
+$margin-height4: $baseline-height*3; //90px
+
+
+
+/* z-index 
+#modal:1100
+.header : 1000
+.side_bar: 400
+#backToTop: 400
+#warp : 300
+*/
+
+
+/* mixin */
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin min-size($min-width, $min-height) {
+  min-width: $min-width;
+  min-height: $min-height;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin flex($display, $flex-flow) {
+  display: $display;
+  flex-flow: $flex-flow;
+}
+
+
+/*style reset*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*styling*/
+
+html {
+  font-size: $fontSize0;
+  font-family: $font-sans;
+  line-height: $lineHeight0;
+}
+
+body {
+  font-size: $fontSize0;
+  line-height: $lineHeight0;
+}
+
+p {
+  margin-top: $margin-height2;
+  margin-bottom: $margin-height1;
+}
+
+h1 {
+  font-size: $fontSize1;
+}
+
+h2 {
+  margin-top: $margin-height4;
+  font-size: $fontSize2;
+  font-weight: bold;
+}
+
+
+/*h3요소가 앞에 존재하는 h2를 선택*/
+
+h3~h2 {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: $fontSize0;
+  margin-top: $margin-height1;
+}
+
+blockquote {
+  font-family: $fontCol-blockquote;
+  font-size: $fontSize3;
+  font-weight: 400;
+  color: $fontCol-blockquote;
+  line-height: $lineHeight1;
+  letter-spacing: -0.04rem;
+  margin-bottom: $margin-height3;
+}
+
+a {
+  color: $fontCol-aquamarine;
+}
+
+
+/* 스타일링 */
+
+.header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  @include flex(flex, row nowrap);
+  @include size(100%, auto);
+  @include min-size(960px, auto);
+  color: $fontCol-black;
+  font-weight: bold;
+}
+
+.logo {
+  @include size(10%, auto);
+  @include min-size(100px, auto);
+  text-align: center;
+}
+
+.menu {
+  @include size(100px, auto);
+  position: absolute;
+}
+
+.menu ul {
+  @include flex(flex, row wrap);
+  position: fixed;
+  right: 10px;
+  list-style: none;
+  text-align: center;
+  > li {
+    @include size(100px, auto);
+  }
+}
+
+.wrap {
+  z-index: 300;
+  position: relative;
+  @include size(100%, auto);
+  min-width: 960px;
+}
+
+.side_bar {
+  z-index: 400;
+  line-height: $lineHeight0;
+  position: fixed;
+  top: 80px;
+  left: 42px;
+  @include size(140px, auto);
+  > ul {
+    list-style: none;
+    font-weight: bold;
+  }
+}
+
+
+
+.intro {
+  position: relative;
+  @include size(100%, 300px);
+  background-color: $bgCol-intro;
+}
+
+.contents {
+  margin: 0 auto;
+  @include size(780px, auto);
+}
+
+.contents .text {
+  @include size(620px, auto);
+  margin: 0 auto;
+}
+
+.contents .whole_img {
+  @include size(780px, auto);
+  margin: 0 auto;
+}
+
+.contents .middle_img {
+  @include size(620px, auto);
+  margin: 0 auto;
+}
+
+.intro_title {
+  @include size(620px, auto);
+  position: absolute;
+  left: 282px;
+  bottom: 10px;
+}
+
+.selected {
+  border-bottom: 1px solid black;
+}
+
+
+/* 접는 방법에 대한 표*/
+
+.fold {
+  @include flex(flex, row wrap);
+  justify-content: space-between;
+  margin: $margin-height3 0 $margin-height3 0;
+  @include size(100%, auto);
+}
+
+.fold > div {
+  @include size(180px, 280px);
+  margin-top: $margin-height3;
+  @include flex(flex, column nowrap);
+  /*  background-image: url(../img/161218_c-fold_trans_bg.png);*/
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/986441/161218_c-fold_trans_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: space-around;
+}
+
+.fold > div > div {
+  @include size(auto, 40%);
+}
+
+.fold_name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.fold_explain {
+  @include flex(flex, row nowrap);
+}
+
+.fold_explain div {
+  @include size(50%, auto);
+}
+
+.value_index {
+  font-size: $fontSize6;
+  font-weight: bold;
+  line-height: $lineHeight2;
+  text-align: left;
+  padding: 10px 0 10px 20px;
+}
+
+.value_data {
+  font-size: $fontSize6;
+  line-height: $lineHeight2;
+  text-align: right;
+  padding: 10px 20px 10px 0;
+}
+
+.instruction {
+  font-size: $fontSize5;
+  margin: $margin-height2 0 $margin-height3 0;
+  padding: $margin-height1 $gutter-width $margin-height1 $gutter-width;
+  background-color: $bgCol-instruction;
+  border-radius: 0.5rem;
+}
+
+.step {
+  margin-top: $margin-height4;
+  border-top: 6px dotted $main-color;
+}
+
+
+/* 여기부터 카드 슬라이드 */
+
+.cards {
+  @include flex(flex, row nowrap);
+  @include size(960px, 280px);
+  border: 2px solid $main-color;
+  overflow: hidden;
+
+}
+
+.usageCard {
+
+  margin-top: 30px;
+  @include flex(flex, column nowrap);
+  flex: 0 0 180px;
+  justify-content: space-around;
+  @include size(180px, 100%);
+  
+  border: 2px solid $main-color;
+  background-image: url(../img/161218_c-fold_trans_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+/* 맨 위로가기 버튼 */
+
+#backToTop {
+  z-index: 400;
+  position: fixed;
+  top: 60%;
+  left: 2%;
+  
+  background-color: $main-color;
+  @include size(100px, auto);
+  color: $fontCol-white;
+
+  
+
+  > p { 
+          text-align:center;
+          margin:0;
+          padding:10px; 
+          font-weight:900; }
+}
+
+
+.history_box2 {
+  margin-top: 60px;
+  @include size(620px, auto);
+  @include flex(flex, row nowrap);
+  justify-content: space-between;
+  
+  > .year {
+    @include size(80px,  auto);
+    padding-top: 2px;
+    /*     background-image: url('../img/161223_year_bg03.svg'); */
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/986441/161223_year_bg03.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 80px;
+    
+    color: $fontCol-white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  
+  
+  > .img {
+      @include size(120px,  200px);
+    > img { max-width: 120px; }
+  }
+  
+  
+  > .explain {
+      @include size(380px,  auto);
+      @include flex(flex, column nowrap); 
+    
+    > .title {
+        @include size(380px,  auto);
+        font-size: 1.2rem;
+        margin-bottom: 15px; }
+    
+    > .text {
+        @include size(380px,  auto); } 
+  }
+  
+  
+}
+
+
+
+#modal {
+        z-index:1100;
+        position:absolute;
+        padding:20px;
+        @include size(720px, auto);
+        background-color:$main-color;
+
+        > .modal-content {
+                @include size(90%, 200px);
+                padding:20px;
+                background-color:$fontCol-white;
+        }
+
+        > .modal-close {
+                background-color:none;
+                padding:6px;
+                color:$fontCol-white;
+        }
+}

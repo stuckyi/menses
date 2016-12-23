@@ -1,8 +1,4 @@
 
-<div id="share">
-        <button>클릭하면 모달창이 열려요!</button>
-</div>
-
 
 
 <!-- 인트로 -->
@@ -43,10 +39,23 @@
 </div>
 <!-- 단계 끝 --> 
 
+<!-- modal -->
+
+<div *ngIf="modalState" id="modal">
+        <div class="modal-content">
+                <h1>{{title}}</h1>
+                <p>리컵은 질내에 삽입하는 생리용품이다보니 사용법을 잘 알지 못하고는 제대로 사용하기가 어렵습니다.아프지 않고 편하게 사용하려면 사용법을 꼭 알아두어야 합니다. 사용할 생리컵이 준비가 되셨나요?</p>
+        </div>
+
+        <button (click)="onClose()" class="modal-close"> X </button>
+</div>
+
+<button (click)="onOpen()"class="modal-open"> 열기 </button>
+
 <div class="middle_img">
         <div class="fold">
 
-                <div class="fold1">
+                <div #spy1 (click)="onCard(spy1)" class="fold1" >
                         <div class="fold_name">C자형 접기</div>
                         <div class="fold_explain">
                                 <div class="value_index">
@@ -64,7 +73,7 @@
                                 </div>
                         </div>
                 </div>
-                <div class="fold2">
+                <div #spy2 (click)="onCard(spy2)" class="fold2">
 
                         <div class="fold_name">C자형 접기</div>
                         <div class="fold_explain">
