@@ -39,18 +39,26 @@
 </div>
 <!-- 단계 끝 --> 
 
-<!-- modal -->
 
-<div *ngIf="modalState" id="modal">
-        <div class="modal-content">
+
+
+<!-- modal area -->
+<div *ngIf="modalState"
+ id="modal"
+ [class]="modalState? 'modalOn' : 'modalOff'">
+        <div  >
                 <h1>{{title}}</h1>
-                <p>리컵은 질내에 삽입하는 생리용품이다보니 사용법을 잘 알지 못하고는 제대로 사용하기가 어렵습니다.아프지 않고 편하게 사용하려면 사용법을 꼭 알아두어야 합니다. 사용할 생리컵이 준비가 되셨나요?</p>
+                <p>베를린 독일 문화원 알렉산더플라츠 영어 카타리나 밋업 유럽 내인생 유미 사랑 학교 독일어 자존감 성취감 우울감 자식 행복</p>
         </div>
 
         <button (click)="onClose()" class="modal-close"> X </button>
 </div>
 
-<button (click)="onOpen()"class="modal-open"> 열기 </button>
+
+
+
+
+
 
 <div class="middle_img">
         <div class="fold">

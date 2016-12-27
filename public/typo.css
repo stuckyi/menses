@@ -293,20 +293,63 @@ a {
       height: auto; }
 
 #modal {
+  /*
+        z-index:1100;
+        position:absolute;
+        padding:20px;
+        @include size(720px, auto);
+        background-color:$main-color;
+        animation: bounceIn 2s;
+*/ }
+  #modal .modal-close {
+    background-color: none;
+    padding: 6px;
+    color: white; }
+
+.modalOn {
   z-index: 1100;
   position: absolute;
   padding: 20px;
   width: 720px;
   height: auto;
+  background-color: aquamarine;
+  animation: bounceIn 2s; }
+
+.modalOff {
+  z-index: -10;
+  animation: bounceOut 2s;
+  position: absolute;
+  padding: 20px;
+  width: 720px;
+  height: auto;
   background-color: aquamarine; }
-  #modal > .modal-content {
-    width: 90%;
-    height: 200px;
-    padding: 20px;
-    background-color: white; }
-  #modal > .modal-close {
-    background-color: none;
-    padding: 6px;
-    color: white; }
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1); }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9); }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03); }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97); }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1); } }
+@keyframes bounceOut {
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9); }
+  50%, 55% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1); }
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); } }
 
 /*# sourceMappingURL=typo.css.map */

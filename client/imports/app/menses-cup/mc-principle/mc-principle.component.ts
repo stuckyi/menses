@@ -8,5 +8,5 @@ import template from './mc-principle.component.html';
         gridStyle
 })
 export class McPrincipleComponent {
-
+        itemTitle: string = "작동원리";
 }

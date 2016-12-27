@@ -19,13 +19,12 @@
         </section>
 
         <section class="contents">
-                <div [hidden]="selectedIndex.name_eng != 'intro'" ><mc-intro></mc-intro></div>
-                <div [hidden]="selectedIndex.name_eng != 'shape'" ><mc-shape></mc-shape></div>
-                <div [hidden]="selectedIndex.name_eng != 'principle'" ><mc-principle></mc-principle></div>
-                <div [hidden]="selectedIndex.name_eng != 'usage'" ><mc-usage></mc-usage></div>
-                <div [hidden]="selectedIndex.name_eng != 'history'" ><mc-history></mc-history></div>
-                <div [hidden]="selectedIndex.name_eng != 'purchasing'" ><mc-purchasing></mc-purchasing> </div>
-                <div [hidden]="selectedIndex.name_eng != 'proscons'" ><mc-proscons></mc-proscons> </div>
+                <mc-definition *ngIf="selectedIndex.name_eng === 'definition'"></mc-definition>
+                <mc-principle *ngIf="selectedIndex.name_eng === 'principle'"></mc-principle>
+                <mc-usage *ngIf="selectedIndex.name_eng === 'usage'"></mc-usage>
+                <mc-product *ngIf="selectedIndex.name_eng === 'product'"></mc-product>
+                <mc-history *ngIf="selectedIndex.name_eng === 'history'"></mc-history>
+                <mc-proscons  *ngIf="selectedIndex.name_eng === 'proscons'"></mc-proscons>
         </section>
 
         <section class="footer">

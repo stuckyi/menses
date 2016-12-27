@@ -11,6 +11,7 @@ import template from './mc-usage.component.html';
 export class McUsageComponent {
         title: string = '생리컵 사용법';
         modalState: boolean = false;
+        modalTest: string = 'tadkim';
         cardModel: any;
         fold1_mouseover: boolean = true;
 
@@ -20,14 +21,6 @@ export class McUsageComponent {
                 this.fold1_mouseover = (this.fold1_mouseover !== true) ? true : false;
         }
 
-        questionList = ['난이도', '평가항목2', '평가항목3', '평가항목4', '평가항목5'];
-
-        getCardData(): any {
-                return [
-                        { index:0, name: 'c자형 접기', imgUrl: '#' }
-
-                ];
-        }
         onOpen(): void{
                 this.modalState = true;
         }
@@ -37,6 +30,7 @@ export class McUsageComponent {
 
         onCard(e): void{
                 console.log(e);
+                this.modalTest = 'yumm';
                 this.modalState = true;
         }
         onMouseover(e): void {

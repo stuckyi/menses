@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import styles from '../../../../public/menses-cup.component.css';
+import styles from '../../../../public/typo.css';
 import template from './cotton-pad.component.html';
 
 @Component({

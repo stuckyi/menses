@@ -15,15 +15,14 @@ import { PadComponent } from './pad/pad.component';
 import { CottonPadComponent } from './cotton-pad/cotton-pad.component';
 import { Page404Component } from './page404.component';
 
-
-import { McIntroComponent } from './menses-cup/mc-intro/mc-intro.component';
+import { McDefinitionComponent } from './menses-cup/mc-definition/mc-definition.component';
 import { McUsageComponent } from './menses-cup/mc-usage/mc-usage.component';
-import { McShapeComponent } from './menses-cup/mc-shape/mc-shape.component';
 import { McHistoryComponent } from './menses-cup/mc-history/mc-history.component';
+import { McProductComponent } from './menses-cup/mc-product/mc-product.component';
 
 import { McPrincipleComponent } from './menses-cup/mc-principle/mc-principle.component';
 import { McProsConsComponent } from './menses-cup/mc-proscons/mc-proscons.component';
-import { McPurchasingComponent } from './menses-cup/mc-purchasing/mc-purchasing.component';
+
 
 import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
 
@@ -42,13 +41,12 @@ import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
       PadIntroComponent,
     CottonPadComponent,
     Page404Component,
-    McIntroComponent,
+    McProductComponent,
       McUsageComponent,
-      McShapeComponent,
       McHistoryComponent,
       McPrincipleComponent,
-      McProsConsComponent,
-    McPurchasingComponent
+    McProsConsComponent,
+      McDefinitionComponent
   ],
   bootstrap: [
     AppComponent
