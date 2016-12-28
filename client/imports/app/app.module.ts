@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
 import { ModalComponent } from './interaction/modal/modal.component';
+import { SliderComponent } from './interaction/slider/slider.component';
 
 import { MensesCupComponent } from './menses-cup/menses-cup.component';
 import { HomeComponent } from './home/home.component';
@@ -50,7 +51,8 @@ import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
       McPrincipleComponent,
     McProsConsComponent,
     McDefinitionComponent,
-      ModalComponent
+    ModalComponent,
+      SliderComponent
   ],
   bootstrap: [
     AppComponent

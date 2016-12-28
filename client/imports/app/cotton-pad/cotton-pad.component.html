@@ -1,62 +1,74 @@
 
 
+<section class="side_bar">
+        <ul>
+                <li *ngFor="let index of IndexList"
+                        (click)="onSelect(index)"
+                        [class.selected] = 'index === selectedIndex'>
+                        {{index.name}}
+                </li>
+        </ul>
+</section>
 
 
-<!-- sidebar area -->
-<div class="sidebar">
-        <div class="sidebar-index-box">
-                <div class="sidebar-index-item" 
-                *ngFor="let index of indexList"
-                (mouseover)="onSelect(index)"
-                [class.selected]="index === selectedIndex">
-                <a  href="#"
-                        pageScroll href={{index.endScroll}}>
-                        <span> {{ index.name }}</span>
-                </a>
+
+
+<div id="wrap">
+        <section class="intro">
+                <div class=intro_title> <h1>{{selectedIndex.name}}</h1></div>
+        </section>
+
+        <section class="contents">
+                
+                <div class="text">
+                        <h4>모순으로 가득 찬 ‘나쁜 페미니스트'</h4>
+                        <p>페미니스트가 되는 것은 힘든 일이다.
+                        그런 딱지가 붙는다는 것은 내가 말하는 것에 부합하지 않는 나의 많은 면들을 부정하게 만들며, 혹여나 발견되는 모순은 나를 순식간에 ‘페미니스트'의 이상에서 끌어내려버린다.
+                        </p>
                 </div>
-        </div>
+                <!-- slider area -->
+                <inter-slider></inter-slider>
+                <div class="text">
+                        <p>
+                        하지만 게이씨가 그랬듯, 나는 매일매일 좀더 나아지려고 노력할 수 있을 뿐이다.
+                        지금 당장 완벽하지 않고 영원히 완벽한 이상의 결정체가 될 수 없다. 영원히 모순 덩어리일 것이다.
+                        </p>
+                        <p>
+                        나는 나부터, 주위 사람의 알 권리부터 늘린다.
+                        그리고 큰 변화는, 영향력 있는 기업가나 명망 있는 지식인들에게 맡긴다.</p>
+                </div>
+                
+                <div class="text">
+
+
+                        <h4>요약</h4>
+                        <p>일반 여성들이 천 생리대를 직접 만들기 위한 방대한 정보를 정리하여 시각적으로 보기 쉽게 제공해주는 데이터 시각화 웹페이지를 개설한다.</p>
+
+                        <h4>개요</h4>
+                        <p>일회용 생리대의 가격을 올린다는 말을 듣고 불매 운동이 한창이다. 불매 운동이 시작되면서 여러 인터넷 커뮤니티에서는 천생리대의 사용을 권장하는 글들이 올라오기 시작했다. 일회용 생리대의 대안품인 문컵(실리콘으로 된 생리컵)이나 천생리대는 그 존재를 알고 있긴 하였으나, 한번 쓰고 버리면 되는 간편한 일회용 생리대 사용을 멈추고 그들을 사용하기 시작할만한 강력한 동기는 없었다. 하지만 그간 생리할 때의 당연한 현상인 줄로만 알았던 불편한 느낌들이 일회용 생리대의 고분자 흡수체로 인한 폐해라는 관점의 글들을 보게 되었을 때, 그리고 천 생리대를 사용한 후 생리통이 줄어들었다는 글들을 보았을 때 혹시나 하는 마음과 함께 천 생리대에 대하여 찾아보게 되었다.</p>
+                        
+                </div>
+                
+                
+
+
+
+        </section>
+
+        <section class="footer">
+                <div class="navigationEach">
+
+                </div>
+
+                <span id="goToBefore" 
+                (click)="navigateDir($event)"
+                [hidden]="selectedIndex.id === 0">
+                 before :
+                </span> 
+
+                <span id="goToNext"
+                 (click)="navigateDir($event)"
+                 [hidden]="selectedIndex.id === (IndexList.length-1)">  next : </span>
+        </section>    
 </div>
-
-<div id="wrap">
-
-
-
-        <!-- main content area -->
-        <div class="main">
-
-                <div class="intro">
-                        <h4>천 생리대</h4>
-                        <h1>사용법</h1>
-                        
-                </div>
-
-                <div class="itemList">
-                        <div class="item">
-                                <h2>천 생리대를 사용하는 단계</h2>
-                                <p>생리컵은 질내에 넣고 시간이 흐른 뒤 생리혈이 어느 정도 모이면 빼내어 비웁니다. 생리 기간 동안에는 생리컵을 빼내서 씻은 다음 다시 넣어 사용합니다. 과정은 간단하지만 처음에는 사용하기 어려우니, 각 단계에 대한 자세한 설명을 숙지한 후 사용합니다.
-                                </p>
-
-                                <p> 말은 쉽지만 막상 사용해보려면 궁금한 점이 많이 생기게 된다.
-                                </p>
-
-                                <blockquote>"어떻게 접어야 잘 접은 건가요?"</blockquote>
-                                <blockquote>"생리컵을 넣은 후 몇 시간이 지나서 빼내야 하나요?"</blockquote>
-                                <blockquote>"생리컵을 비운 후에는 물로만 씻어도 되는 건가요?"</blockquote>
-
-                                <p> 이제 이런 궁금증을 단계별로 해결해봅시다. </p>
-
-                                <figcaption>
-                                        아래는 생리컵을 사용하는 과정에 대한 그림입니다. 각 과정을 누르면 해당하는 과정에 대한 설명 부분으로 볼 수 있습니다. 전체 과정을 주욱 보고 싶다면 스크롤을 계속 내려주세요. 
-                                </figcaption>
-                        </div>
-                        
-
-
-                        <div class="item">
-                                <h2>1단계 <br/> 손 씻고 생리컵 준비하기</h2>
-                                <p>생리컵을 넣기 전에 손을 깨끗이 씻어줍니다. 보관해두었던 생리컵을 꺼내어 손으로 잡습니다.</p>
-                        </div>
-        </div>
-</div> 
-
 
