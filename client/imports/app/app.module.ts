@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
+import { ModalComponent } from './interaction/modal/modal.component';
 
 import { MensesCupComponent } from './menses-cup/menses-cup.component';
 import { HomeComponent } from './home/home.component';
@@ -19,12 +20,14 @@ import { McDefinitionComponent } from './menses-cup/mc-definition/mc-definition.
 import { McUsageComponent } from './menses-cup/mc-usage/mc-usage.component';
 import { McHistoryComponent } from './menses-cup/mc-history/mc-history.component';
 import { McProductComponent } from './menses-cup/mc-product/mc-product.component';
-
 import { McPrincipleComponent } from './menses-cup/mc-principle/mc-principle.component';
 import { McProsConsComponent } from './menses-cup/mc-proscons/mc-proscons.component';
 
 
 import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
+
+
+
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
       McHistoryComponent,
       McPrincipleComponent,
     McProsConsComponent,
-      McDefinitionComponent
+    McDefinitionComponent,
+      ModalComponent
   ],
   bootstrap: [
     AppComponent

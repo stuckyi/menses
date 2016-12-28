@@ -40,17 +40,9 @@
 <!-- 단계 끝 --> 
 
 
-
-
-<!-- modal area -->
-<div *ngIf="modalState"
- id="modal"
- [class]="modalState? 'modalOn' : 'modalOff'">
-        <div  >
-                <h1>{{title}}</h1>
-                <p>베를린 독일 문화원 알렉산더플라츠 영어 카타리나 밋업 유럽 내인생 유미 사랑 학교 독일어 자존감 성취감 우울감 자식 행복</p>
-        </div>
-
+<div *ngIf="modalState"id="modal" [class]="modalState? 'modalOn' : 'modalOff'">
+        <modal  [selectedFold]="selectedFold" >
+        </modal>
         <button (click)="onClose()" class="modal-close"> X </button>
 </div>
 
@@ -63,11 +55,11 @@
 <div class="middle_img">
         <div class="fold">
 
-                <div #spy1 (click)="onCard(spy1)" class="fold1" >
-                        <div class="fold_name">C자형 접기</div>
-                        <div class="fold_explain">
+                <div (click)="onCard($event);" class="fold1" >
+                        <div class="fold_name" >C자형 접기</div>
+                        <div class="fold_explain" >
                                 <div class="value_index">
-                                        난이도<br/>
+                                        <span>난이도</span><br/>
                                         평가항목2<br/>
                                         평가항목3<br/>
                                         평가항목4
@@ -81,7 +73,7 @@
                                 </div>
                         </div>
                 </div>
-                <div #spy2 (click)="onCard(spy2)" class="fold2">
+                <div(click)="onCard($event);"class="fold2">
 
                         <div class="fold_name">C자형 접기</div>
                         <div class="fold_explain">

@@ -16,6 +16,15 @@ html:lang(ko) {
 #warp : 300
 */
 /* mixin */
+/*
+@include border-radius(5px);
+
+// Single side border-radius
+@include border-top-radius(10px);
+@include border-right-radius(8px);
+@include border-bottom-radius(10px);
+@include border-left-radius (6px);
+*/
 /*style reset*/
 * {
   box-sizing: border-box; }
@@ -180,10 +189,12 @@ a {
   height: 40%; }
 
 .fold_name {
+  pointer-events: none;
   text-align: center;
   font-weight: bold; }
 
 .fold_explain {
+  pointer-events: none;
   display: flex;
   flex-flow: row nowrap; }
 
@@ -243,6 +254,10 @@ a {
   position: fixed;
   top: 60%;
   left: 2%;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
   background-color: aquamarine;
   width: 100px;
   height: auto;
@@ -293,36 +308,39 @@ a {
       height: auto; }
 
 #modal {
-  /*
-        z-index:1100;
-        position:absolute;
-        padding:20px;
-        @include size(720px, auto);
-        background-color:$main-color;
-        animation: bounceIn 2s;
-*/ }
-  #modal .modal-close {
-    background-color: none;
-    padding: 6px;
-    color: white; }
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 720px;
+  height: auto; }
+
+.modal-close {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  background-color: none;
+  padding: 6px;
+  color: white; }
 
 .modalOn {
   z-index: 1100;
   position: absolute;
   padding: 20px;
-  width: 720px;
+  width: 100%;
   height: auto;
   background-color: aquamarine;
-  animation: bounceIn 2s; }
+  animation: bounceIn 1s; }
 
 .modalOff {
   z-index: -10;
-  animation: bounceOut 2s;
   position: absolute;
-  padding: 20px;
-  width: 720px;
-  height: auto;
-  background-color: aquamarine; }
+  padding: 20px; }
 
 @keyframes bounceIn {
   from, 20%, 40%, 60%, 80%, to {
