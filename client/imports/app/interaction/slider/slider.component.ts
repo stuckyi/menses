@@ -11,24 +11,80 @@ import interStyle from './slider.component.css';
 
 export class SliderComponent {
         activeIndex: number = 0;
-        
-        currentDir: string;
+        dirChange: any;
+        currentIndex: number = 0;
 
 
 
-
-        onForward() {
-                this.activeIndex++;
-         
-        }
-        onBackward() {
-                this.activeIndex--;
+        setDirType(dir: string) {
                 
+                if (dir === 'left') {
+                        let toIndex_left = this.currentIndex - 1;
+                        let toIndex_left_string = toIndex_left.toString();
+                        
+                        
+                        
+                        this.dirChange = this.currentIndex + 'to' + toIndex_left;
+                        this.currentIndex = this.currentIndex - 1;
+                        
+                } else if (dir === 'right') {
+                        let toIndex_right = this.currentIndex + 1;
+                        let toIndex_right_string = toIndex_right.toString();
+
+                        this.dirChange = this.currentIndex + 'to' + toIndex_right;
+                        this.currentIndex = this.currentIndex+1;
+                } else {
+                        console.log('setDirType error');
+                }
+
+                console.log('dir', dir);
+                console.log('dirChange', this.dirChange);
                 
         }
 
-        NgOnInit() {
+
+        setClasses(index:number) {
                 
+                let slideIndex = index;
+                let classes = {
+                        activeCard: (this.activeIndex === slideIndex),
+                        inactiveCard: (this.activeIndex > slideIndex)
+                };
+
+                return classes;
         }
+
+        setSliderRowClasses() {
+                let classes_row = {
+                        step6_from_right: (this.dirChange === '7to6'),
+                        step5_from_right: (this.dirChange === '6to5'),
+                        step4_from_right: (this.dirChange === '5to4'),
+                        step3_from_right: (this.dirChange === '4to3'),
+                        step2_from_right: (this.dirChange === '3to2'),
+                        step1_from_right: (this.dirChange === '2to1'),
+                        step0_from_right: (this.dirChange === '1to0'),
+                        stepN1_from_right: (this.dirChange === '0to-1'),
+                        stepN2_from_right: (this.dirChange === '-1to-2'),
+                        stepN3_from_right: (this.dirChange === '-2to-3'),
+                        stepN4_from_right: (this.dirChange === '-3to-4'),
+                        stepN5_from_right: (this.dirChange === '-4to-5'),
+                        stepN6_from_right: (this.dirChange === '-5to-6'),
+                        step6_from_left: (this.dirChange === '5to6'),
+                        step5_from_left: (this.dirChange === '4to5'),
+                        step4_from_left: (this.dirChange === '3to4'),
+                        step3_from_left: (this.dirChange === '2to3'),
+                        step2_from_left: (this.dirChange === '1to2'),
+                        step1_from_left: (this.dirChange === '0to1'),
+                        step0_from_left: (this.dirChange === '-1to0'),
+                        stepN1_from_left: (this.dirChange === '-2to-1'),
+                        stepN2_from_left: (this.dirChange === '-3to-2'),
+                        stepN3_from_left: (this.dirChange === '-4to-3'),
+                        stepN4_from_left: (this.dirChange === '-5to-4'),
+                        stepN5_from_left: (this.dirChange === '-6to-5'),
+                        stepN6_from_left: (this.dirChange === '-7to-6')
+                }
+                return classes_row;
+        }
+
 
 }

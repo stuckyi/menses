@@ -1,14 +1,29 @@
+
 <div id="slider-container">
         <div class="slider-controller">
-                <div (click)="onBackward($event)"><i class="material-icons">arrow_back</i></div>
-                <div (click)="onForward($event)"><i class="material-icons">arrow_forward</i></div>
+                <div (click)="setDirType('left')"><i class="material-icons">arrow_back</i></div>
+                <div (click)="setDirType('right')"><i class="material-icons">arrow_forward</i></div>
         </div>
-        <div class="slider-row" >
-                <div class="slider" [class.activeCard]="activeIndex === 0"></div>
+        
+        <div class="slider-row" [ngClass]="setSliderRowClasses()" >
+                <div class="slider" [ngClass]="setClasses(1)">1</div>
+                <div class="slider" [ngClass]="setClasses(2)">2</div>
+                <div class="slider" [ngClass]="setClasses(3)">3</div>
+                <div class="slider" [ngClass]="setClasses(4)">4</div>
+                <div class="slider" [ngClass]="setClasses(5)">5</div>
+                <div class="slider" [ngClass]="setClasses(6)">6</div>
+
+                <!--
+                <div class="slider" 
+                [class.activeCard]="activeIndex === 0"
+                [class.inactiveCard]="activeIndex < 0"
+                >1</div>
                 <div class="slider" [class.activeCard]="activeIndex === 1">2</div>
                 <div class="slider" [class.activeCard]="activeIndex === 2">3</div>
                 <div class="slider" [class.activeCard]="activeIndex === 3">4</div>
                 <div class="slider" [class.activeCard]="activeIndex === 4">5</div>
                 <div class="slider" [class.activeCard]="activeIndex === 5">6</div>
+
+                -->
         </div>
 </div>
