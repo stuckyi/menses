@@ -1,7 +1,7 @@
 import { WindowRef } from './WindowRef';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +25,7 @@ import { McPrincipleComponent } from './menses-cup/mc-principle/mc-principle.com
 import { McProsConsComponent } from './menses-cup/mc-proscons/mc-proscons.component';
 
 
+
 import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
 
 
@@ -34,6 +35,7 @@ import { PadIntroComponent } from './pad/pad-intro/pad-intro.component';
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   declarations: [

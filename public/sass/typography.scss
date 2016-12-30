@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* typo */
+
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+html:lang(ko) {
+  font-size: 17px;
+} //default font size
+$fontSize0: 100%; //body
+$fontSize1: 300%; //h1
+$fontSize2: 200%; //h2
+$fontSize3: 120%; //h3, blockquote, .history_box > .title
+$fontSize4: 110%; //h4
+$fontSize5: 90%; //instruction
+$fontSize6: 80%; //.value_index, .value_data
+$lineHeight0: 1.7647058824rem; //default, .side_bar
+$lineHeight1: 2rem; //blockquote
+$lineHeight2: 1.5rem; //.value_index, .value_data
+$font-sans: 'Noto Sans KR',
+sans-serif; //default font-family
+$font-serif: 'Nanum Myeongjo',
+serif;

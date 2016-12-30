@@ -1,0 +1,8 @@
+/* typo */
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+html:lang(ko) {
+  font-size: 17px; }
+
+/*# sourceMappingURL=typography.css.map */

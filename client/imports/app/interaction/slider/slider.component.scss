@@ -102,6 +102,31 @@ $testCol:#6200EA;
   box-sizing: border-box;
 }
 
+
+
+
+$slider_duraition:1.05s; //슬라이드 카드 이동(지속)시간
+
+/* slide step px */
+$step1:200px;
+$step2:400px;
+$step3:600px;
+$step4:800px;
+$step5:1000px;
+$step6:1200px;
+$step7:1400px;
+
+
+
+
+@mixin slide_animation($animation-name, $ani-duration, $ani-timing){
+  animation: $animation-name $ani-duration;
+  animation-fill-mode: forwards;
+  animation-timing-function: $ani-timing
+}
+
+
+
 #slider-container{
         background-color:#e9e9e9;
         @include size(100%, 480px);
@@ -120,9 +145,11 @@ $testCol:#6200EA;
         }
         
         
-        .slider-row.stepN6_from_right { animation:stepN6_from_right 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
-        .slider-row.stepN6_from_left { animation:stepN6_from_left 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
-        .slider-row.stepN5_from_right { animation:stepN5_from_right 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
+        .slider-row.stepN6_from_right { @include slide_animation(stepN6_from_right, 1.05s, ease); }
+        .slider-row.stepN6_from_left  { @include slide_animation(stepN6_from_left, 1.05s, ease); }
+        .slider-row.stepN5_from_right { @include slide_animation(stepN5_from_right, 1.05s, ease); }
+        .slider-row.stepN5_from_left  { @include slide_animation(stepN5_from_right, 1.05s, ease); }
+
         .slider-row.stepN5_from_left { animation:stepN5_from_left 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
         .slider-row.stepN4_from_right { animation:stepN4_from_right 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
         .slider-row.stepN4_from_left { animation:stepN4_from_left 1.05s; animation-fill-mode:forwards; animation-timing-function: ease;}
@@ -150,10 +177,11 @@ $testCol:#6200EA;
         .slider-row { 
                 
                 @include size(90%, auto);
-                margin:30px;                            //change to sustainable variables(needs)
+                margin:20px;                            //change to sustainable variables(needs)
                 
 
                 @include flex(flex, row nowrap);
+
                 animation:step0_from_default 1.75s;
 
 
@@ -403,17 +431,6 @@ $fadeInRight_to_a: -100px;
     transform: none;
   }
 }
-
-
-
-
-$step1:200px;
-$step2:400px;
-$step3:600px;
-$step4:800px;
-$step5:1000px;
-$step6:1200px;
-$step7:1400px;
 
 
 

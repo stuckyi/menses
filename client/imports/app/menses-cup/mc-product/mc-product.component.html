@@ -1,17 +1,114 @@
 
 <div class="text">
+        <h2>어떤 생리컵을 골라서 정보제공 할 것인가?</h2>
+        <p>모든 생리컵을 하는 게 나을 것인가? 일단은 인지도 있고 사람들이 많이 사용하는 것이 어떤 것인지 궁금했다 나는. 그래서 세상의 모든 생리컵을 보여주기보다는 일단 사용을 많이 하는 것들을 위주로 하면 메뉴가 많을 때 생기는 선택 장애(?)를 방지할 수 있지 않을까 싶다.
 
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        <p>제품정보 </p>
-        
-        
-        
+여러 웹페이지들에서 정보가 제공되거나 랭킹에 있는, 좋다고 하는 컵을 우선적으로 정리하려고 하고 있다.
+
+다음은 자주 가는 사이트, 혹은 구글에서 Menstrual cups ranking으로 검색에 걸린 곳에서의 순위를 정리해보았다.</p>
+
+</div>
+
+<!-- filterable dropdown -->
+<div class="whole_img">
+        <div id="filterable-product-selection"> 
+                <div class="filtering-1">
+                        <div class="filtering-title"> <span>생리컵 검색 필터</span></div>
+                        <div class="filtering-checkbox"> 
+                                <span>정렬순서(기능X)</span><br/>
+                                <input type="checkbox" id="cbox1" value="first_checkbox"> <label>인기순</label>
+                                <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">가격순</label>
+                        </div>
+                </div>
+                <div class="filtering-2">
+                        <div>
+                                <form #formColor="ngForm" >
+                                        <select  name="color" #sel_color (change)="changeOptions('color', sel_color.value)" [ngModel]="colors[0]" >
+                                                <option  *ngFor="let color of colors" > {{color}} </option>
+                                        </select> 
+                                </form>
+                        </div>
+                        
+                        <div>
+                                <form #formPrice="ngForm">
+                                        <select name="price" #sel_price (change)="changeOptions('price', sel_price.value)" [ngModel]="prices[0]">
+                                                <option *ngFor="let price of prices"> {{price}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+
+                        <div>
+                                <form #formLength="ngForm">
+                                        <select #sel_length (change)="changeOptions('length', sel_length.value)" name="productLenth" [ngModel]="productLenths[0]">
+                                                <option *ngFor="let productLenth of productLenths"> {{productLenths}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+                        <div>
+                                <form #formHandType="ngForm">
+                                        <select #sel_handType name="handType" (change)="changeOptions('handType', sel_handType.value)"[ngModel]="handTypes[0]">
+                                                <option *ngFor="let handType of handTypes">{{handType}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+                        <div>
+                                <form #formMaterialType="ngForm">
+                                        <select #sel_softType name="softType" (change)="changeOptions('softType', sel_softType.value)" [ngModel]="softTypes[0]">
+                                                <option *ngFor="let softType of softTypes">{{softType}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+                        <div>
+                                <form #formMaterialType="ngForm">
+                                        <select #sel_materialType name="materialType" 
+                                                (change)="changeOptions('materialType', sel_materialType.value)"
+                                                [ngModel]="materialTypes[0]">
+                                                <option *ngFor="let materialType of materialTypes">{{materialType}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+                        <div>
+                                <form #formProductSize="ngForm">
+                                        <select #sel_productSize name="productSize"
+                                                (change)="changeOptions('productSize', sel_productSize.value)"
+                                         [ngModel]="productSizes[0]">
+                                                <option *ngFor="let productSize of productSizes">{{productSize}}</option>
+                                        </select> 
+                                </form>
+                        </div>
+
+                        
+                        <div>
+                                <button (click)="onSearch()">검색</button>
+                                <button (click)="onReset()">재설정</button>
+                        </div>
+
+                </div>
+                
+        </div>
+</div>
+
+
+<!-- product view based on filtering data -->
+<div class="whole_img">
+        <div id="filterable-product-table">
+                <div class="product-item" *ngFor="let product of productData">
+                        <div>{{product.name}}</div>
+                        <div>{{product.name_eng}}</div>
+                        <div><img src="{{product.imgUrl}}" alt={{product.name}} ></div>
+                        
+                </div>
+        </div>
+
+</div>
+
+
+<div class="text">
+        <h2>어떤 생리컵을 골라서 정보제공 할 것인가?</h2>
+        <p>모든 생리컵을 하는 게 나을 것인가? 일단은 인지도 있고 사람들이 많이 사용하는 것이 어떤 것인지 궁금했다 나는. 그래서 세상의 모든 생리컵을 보여주기보다는 일단 사용을 많이 하는 것들을 위주로 하면 메뉴가 많을 때 생기는 선택 장애(?)를 방지할 수 있지 않을까 싶다.
+
+여러 웹페이지들에서 정보가 제공되거나 랭킹에 있는, 좋다고 하는 컵을 우선적으로 정리하려고 하고 있다.
+
+다음은 자주 가는 사이트, 혹은 구글에서 Menstrual cups ranking으로 검색에 걸린 곳에서의 순위를 정리해보았다.</p>
+
 </div>

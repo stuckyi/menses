@@ -15,14 +15,12 @@ export class SliderComponent {
         currentIndex: number = 0;
 
 
-
+        //사용자가 선택한 방향 판단 및 현재 기준점 업데이트
         setDirType(dir: string) {
                 
                 if (dir === 'left') {
                         let toIndex_left = this.currentIndex - 1;
                         let toIndex_left_string = toIndex_left.toString();
-                        
-                        
                         
                         this.dirChange = this.currentIndex + 'to' + toIndex_left;
                         this.currentIndex = this.currentIndex - 1;
@@ -42,7 +40,7 @@ export class SliderComponent {
                 
         }
 
-
+        //현재 active 카드 설정하는 NgClass 함수
         setClasses(index:number) {
                 
                 let slideIndex = index;
@@ -53,7 +51,7 @@ export class SliderComponent {
 
                 return classes;
         }
-
+        //slider-row의 class를 변경해주는 함수
         setSliderRowClasses() {
                 let classes_row = {
                         step6_from_right: (this.dirChange === '7to6'),

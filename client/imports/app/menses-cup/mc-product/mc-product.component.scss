@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+@import "../../../../../public/mixin-container";
+@import "../../../../../public/sass/typography";
+// @import "../../../../../public/color-container";
+
+* {
+  box-sizing: border-box;
+}
+
+$Gray50:  #fafafa;
+$Gray100: #f5f5f5;
+$Gray200: #eeeeee;
+$Gray300: #e0e0e0;
+$Gray400: #bdbdbd;
+$Gray500: #9e9e9e;
+$Gray600: #757575;
+$Gray700: #616161;
+$Gray800: #424242;
+$Gray900: #212121;
+
+//filter 선택영역
+#filterable-product-selection{
+        @include size(100%, 200px);
+        @include flex(flex, row nowrap);
+        justify-content: space-around;
+        align-content: stretch;
+
+        background-color:$Gray100;
+        
+        .filtering-1 {
+                margin:10px 0;
+               @include flex(flex, column nowrap);
+               justify-content: space-between;
+               flex-basis:200px;
+               border: 1px solid #000; 
+
+               div {
+                       @include size(100%, 40%);
+                       background-color:$Gray200;
+               }
+               span { font-size:100%; font-weight:900; }
+               label { font-size:60%; }
+
+
+        }
+        .filtering-2 {
+                margin:10px 0;
+                @include flex(flex, row wrap);
+                align-items:flex-start;
+                justify-content: space-between;
+                @include border-radius(4px);
+
+                border: 1px solid #000; 
+                background-color:$Gray300;
+
+                
+               div {
+                       @include size(20%, 14%);
+                       border: 1px solid #000; 
+                       
+                       select{
+                               border: 1px solid #000;
+                               @include size(100%, auto); /* for test */
+                       }
+               }
+        }
+
+}
+//filter product  view 영역
+#filterable-product-table{
+        @include size(100%, 600px);
+        @include flex(flex, row wrap);
+        
+        justify-content: space-between;
+        align-content: space-around;
+        background-color:$Gray100;
+}
+
+
+.product-item{
+        background-color:$Gray300;
+        margin:10px;
+        @include size(20%, 46%);
+        @include border-radius(10px);
+        @include flex(flex, column nowrap);
+
+        text-align:center;
+
+        img { @include size(100%, 100%); }
+
+        div:nth-of-type(1){ @include size(100%, 10%); }
+        div:nth-of-type(2){ @include size(100%, 10%); }
+        div:nth-of-type(3){ @include size(100%, 74%);  }
+}
+
+
+
